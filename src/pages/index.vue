@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-blue-100 w-full min-h-screen p-6 flex items-center justify-center">
+  <main class="bg-blue-100 w-full min-h-screen p-6 flex items-center justify-center overflow-hidden">
     <div class="w-96 lg:w-full max-w-3xl lg:flex lg:gap-5">
       <UserCard :form="form" />
       <form
@@ -22,12 +22,31 @@
         </div>
         <div class="mt-3">
           <label
+            for="age"
+            class="cursor-pointer text-sm mb-1 inline-block"
+          >Age:</label>
+          <input
+            id="age"
+            v-model="form.age"
+            v-mask="'###'"
+            required
+            type="number"
+            name="age"
+            min="0"
+            max="150"
+            value="0"
+            class="w-full block border-2 rounded-xl py-1 px-3"
+          >
+        </div>
+        <div class="mt-3">
+          <label
             for="phone"
             class="cursor-pointer text-sm mb-1 inline-block"
           >Phone:</label>
           <input
             id="phone"
             v-model="form.phone"
+            v-mask="['(##) ####-####', '(##) #####-####']"
             required
             type="tel"
             name="phone"
@@ -45,23 +64,6 @@
             required
             type="email"
             name="email"
-            class="w-full block border-2 rounded-xl py-1 px-3"
-          >
-        </div>
-        <div class="mt-3">
-          <label
-            for="age"
-            class="cursor-pointer text-sm mb-1 inline-block"
-          >Age:</label>
-          <input
-            id="age"
-            v-model="form.age"
-            required
-            type="number"
-            name="age"
-            min="0"
-            max="150"
-            value="0"
             class="w-full block border-2 rounded-xl py-1 px-3"
           >
         </div>
@@ -97,21 +99,26 @@
 </template>
 
 <script>
+import { mask } from 'vue-the-mask'
 
 export default {
   name: 'IndexPage',
+
+  directives: { mask },
+
   data () {
     return {
       customFile: null,
       form: {
         name: null,
+        age: null,
         phone: null,
         email: null,
-        age: null,
         file: null
       }
     }
   },
+
   methods: {
     filePicture (event) {
       const file = event.target.files[0]
@@ -124,13 +131,6 @@ export default {
     },
 
     submit () {
-      // this.form = {
-      //   name: null,
-      //   phone: null,
-      //   email: null,
-      //   age: null,
-      //   file: null
-      // }
       console.log(this.form)
     }
 

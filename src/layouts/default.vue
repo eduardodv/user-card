@@ -1,7 +1,5 @@
 <template>
-  <transition name="fade" mode="out-in">
-    <nuxt />
-  </transition>
+  <nuxt />
 </template>
 
 <script>
