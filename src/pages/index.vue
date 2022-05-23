@@ -71,7 +71,7 @@
           <label
             for="file"
             role="button"
-            class="cursor-pointer text-sm mb-1 block border-dashed border-2 hover:border-blue-500 transition ease-in-out duration-200 py-5 px-4 text-center"
+            class="cursor-pointer text-sm mb-1 block border-dashed border-2 break-all hover:border-blue-500 transition ease-in-out duration-200 py-5 px-4 text-center"
           >
             {{ form.file ? form.file.name : 'UPLOAD IMAGE' }}
           </label>

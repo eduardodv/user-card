@@ -38,7 +38,7 @@
         <div class="">
           <a
             :href="`mailto:${form.email}`"
-            class="text-white text-lg inline-block hover:underline"
+            class="text-white text-lg inline-block hover:underline break-all"
           >
             {{ form.email }}
           </a>
