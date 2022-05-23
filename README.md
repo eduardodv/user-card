@@ -2,6 +2,7 @@
 
 User card developed with Nuxt.js and tailwindcss.
 
+![user-card](https://user-images.githubusercontent.com/8463362/169747623-117fadf8-c3c6-4561-9ab3-505c4fca176d.png)
 
 ## Build Setup
 
