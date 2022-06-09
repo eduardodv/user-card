@@ -16,7 +16,7 @@
           >
           <img
             v-else
-            src="/images/default-user.jpg"
+            src="/user-card/images/default-user.jpg"
             alt="Image default user"
             class="object-cover object-top w-full h-full"
           >

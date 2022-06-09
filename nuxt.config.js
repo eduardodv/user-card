@@ -5,6 +5,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  // Route for githubPages
+  router: {
+    base: '/user-card/'
+  },
+
   // Directory default
   srcDir: 'src',
 
@@ -21,7 +26,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/user-card/favicon.ico' }
     ]
   },
 
